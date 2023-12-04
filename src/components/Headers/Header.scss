@@ -1,0 +1,76 @@
+@import url('https://fonts.googleapis.com/css2?family=Lilita+One&family=Work+Sans:wght@500;600&display=swap');
+
+$primary: #15999e;
+$secondary: #506a75;
+.header-container{
+  background-color:  hsla(0, 0%, 0%, 0);
+}
+.header-logo ,.header-logo-sb{
+  display: flex;
+  align-items: center;
+  font-family: "Mona sans", sans-serif;
+  font-size: 25px;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  color: $primary;
+  font-weight: bold;
+}
+.header-logo-sb{
+  font-size: 16px;
+}
+span {
+  position: relative;
+  display: block;
+  cursor: pointer;
+  padding: 0 10px;
+  transition: 0.6s;
+
+  &:hover {
+    color: $secondary;
+    transition: 0.6s;
+  }
+}
+
+span:before,
+span:after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 3px;
+  top: 50%;
+  margin-top: -0.5px;
+  background: $secondary;
+}
+
+span:before {
+  left: -2.5px;
+}
+
+span:after {
+  right: 2.5px;
+  background: $secondary;
+  transition: width 0.8s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+span:hover:before {
+  background: $secondary;
+  width: 100%;
+  transition: width 0.5s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+span:hover:after {
+  background: transparent;
+  width: 100%;
+  transition: 0s;
+  color: $secondary;
+}
+
+.mobile-version{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  svg{
+    font-size: 36px;
+    color: $primary;
+  }
+}

@@ -1,28 +1,17 @@
 import React, { useEffect, useState } from "react";
 import { Grid } from "@mui/material";
-import BlurOnIcon from '@mui/icons-material/BlurOn';
-import ShoppingBagIcon from '@mui/icons-material/ShoppingBag';
+import BlurOnIcon from "@mui/icons-material/BlurOn";
+import ShoppingBagIcon from "@mui/icons-material/ShoppingBag";
 import "./Header.scss";
-const Header = () => {
-  const [windowDimension, setWindowDimension] = useState(null);
-
-  useEffect(() => {
-    setWindowDimension(window.innerWidth);
-  }, []);
-
-  useEffect(() => {
-    function handleResize() {
-      setWindowDimension(window.innerWidth);
-    }
-
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
-
-  const isMobile = windowDimension <= 900;
-
+import StyleHeader from "../../content/content";
+const Header = ({ handleDrawer, isMobile }) => {
   return (
-    <Grid container sx={{ height: 75 }} columnGap={3} className="header-container">
+    <Grid
+      container
+      sx={{ height: 75 }}
+      columnGap={3}
+      className="header-container"
+    >
       {/* /Logo/ */}
       <Grid
         className="header-logo"
@@ -36,22 +25,20 @@ const Header = () => {
         <span>Enddrone</span>
       </Grid>
       {isMobile ? (
-        <Grid item  xs={3} className="mobile-version">
-        <span><BlurOnIcon sx={{color:'white'}}/></span>
+        <Grid item xs={3} className="mobile-version">
+          <span onClick={() => handleDrawer(true, isMobile)}>
+            <BlurOnIcon sx={{ color: "white" }} />
+          </span>
         </Grid>
       ) : (
         <>
-          <Grid className="header-logo-sb" item md={2}>
-            <span>Products</span>
-          </Grid>
-
-          <Grid className="header-logo-sb" item md={2}>
-            <span>Innovation</span>
-          </Grid>
-
-          <Grid className="header-logo-sb" item md={2}>
-            <span>Support</span>
-          </Grid>
+          {StyleHeader.map((head, idx) => {
+            return (
+              <Grid className="header-logo-sb" item md={2} key={idx}>
+                <span>{head.label}</span>
+              </Grid>
+            );
+          })}
         </>
       )}
     </Grid>

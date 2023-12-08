@@ -8,7 +8,7 @@ const Header = ({ handleDrawer, isMobile }) => {
   return (
     <Grid
       container
-      sx={{ height: 75 }}
+      sx={{ height: 95 }}
       columnGap={3}
       className="header-container"
     >
@@ -25,7 +25,7 @@ const Header = ({ handleDrawer, isMobile }) => {
         <span>Enddrone</span>
       </Grid>
       {isMobile ? (
-        <Grid item xs={3} className="mobile-version">
+        <Grid item sm={3} xs={3} className="mobile-version">
           <span onClick={() => handleDrawer(true, isMobile)}>
             <BlurOnIcon sx={{ color: "white" }} />
           </span>

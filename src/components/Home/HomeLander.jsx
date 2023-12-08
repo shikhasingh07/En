@@ -15,6 +15,7 @@ import animationBlackWire from "../../assets/animationBlackWire.json";
 import CancelIcon from '@mui/icons-material/Cancel';
 import "./HomeLander.scss";
 import "../Headers/Header.scss";
+import ProductLander from "../Products/ProductLander";
 
 const Main = ({ drawer, handleDrawer }) => {
   return (
@@ -92,26 +93,34 @@ const HomeLander = () => {
     setDrawer(cn);
   };
 
-  const render = () => {
-    return showWeb ? (
-      <>
-        <Header handleDrawer={handleDrawer} isMobile={isMobile}/>
-        <Main drawer={ drawer && isMobile} handleDrawer={handleDrawer} isM/>
-      </>
-    ) : (
-      <Lottie
-        animationData={animationBlackWire}
-        style={{
-          height: "65vh",
-          marginTop: "5rem",
-        }}
-        onComplete={() => setShowWeb(true)}
-        loop={false}
-      />
-    );
-  };
+  // const render = () => {
+  //   // return showWeb ? (
+  //     return 
+  //     <>
+  //       <Header handleDrawer={handleDrawer} isMobile={isMobile}/>
+  //       <Main drawer={ drawer && isMobile} handleDrawer={handleDrawer} isM/>
+  //       <ProductLander/>
+  //     </>
+  //   // ) : (
+  //   //   <Lottie
+  //   //     animationData={animationBlackWire}
+  //   //     style={{
+  //   //       height: "65vh",
+  //   //       marginTop: "5rem",
+  //   //     }}
+  //   //     onComplete={() => setShowWeb(true)}
+  //   //     loop={false}
+  //   //   />
+  //   // );
+  // };
 
-  return render();
+  return (
+    <>
+    <Header handleDrawer={handleDrawer} isMobile={isMobile}/>
+    <Main drawer={ drawer && isMobile} handleDrawer={handleDrawer} isM/>
+    <ProductLander/>
+    </>
+  );
 };
 
 export default HomeLander;

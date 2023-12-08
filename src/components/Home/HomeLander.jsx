@@ -93,34 +93,27 @@ const HomeLander = () => {
     setDrawer(cn);
   };
 
-  // const render = () => {
-  //   // return showWeb ? (
-  //     return 
-  //     <>
-  //       <Header handleDrawer={handleDrawer} isMobile={isMobile}/>
-  //       <Main drawer={ drawer && isMobile} handleDrawer={handleDrawer} isM/>
-  //       <ProductLander/>
-  //     </>
-  //   // ) : (
-  //   //   <Lottie
-  //   //     animationData={animationBlackWire}
-  //   //     style={{
-  //   //       height: "65vh",
-  //   //       marginTop: "5rem",
-  //   //     }}
-  //   //     onComplete={() => setShowWeb(true)}
-  //   //     loop={false}
-  //   //   />
-  //   // );
-  // };
+  const render = () => {
+    return showWeb ? (
+      <>
+        <Header handleDrawer={handleDrawer} isMobile={isMobile}/>
+        <Main drawer={ drawer && isMobile} handleDrawer={handleDrawer} isM/>
+        <ProductLander/>
+      </>
+    ) : (
+      <Lottie
+        animationData={animationBlackWire}
+        style={{
+          height: "65vh",
+          marginTop: "5rem",
+        }}
+        onComplete={() => setShowWeb(true)}
+        loop={false}
+      />
+    );
+  };
 
-  return (
-    <>
-    <Header handleDrawer={handleDrawer} isMobile={isMobile}/>
-    <Main drawer={ drawer && isMobile} handleDrawer={handleDrawer} isM/>
-    <ProductLander/>
-    </>
-  );
+  return render();
 };
 
 export default HomeLander;

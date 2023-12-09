@@ -10,25 +10,26 @@ import ProductModel from "./ProductModel";
 import "./productStyle.scss";
 import { motion, stagger, useAnimate } from "framer-motion";
 const ProductLander = () => {
+  
   return (
       <Grid container sx={{ height: "100vh" }}>
         <Grid xs={6} item bgcolor="#096468" p="2rem 4rem">
           <h1 className="product-title">We SERVE AI INTERGRATED TECHNOLOGY</h1>
-          <div class="rightbox">
-            <div class="rb-container">
-              <ul class="rb">
-                <li class="rb-item" ng-repeat="itembx">
-                  <div class="item-title">
-                    <span>Watch IN 360</span>
+          <div className="rightbox">
+            <div className="rb-container">
+              <ul className="rb">
+                <li className="rb-item" ng-repeat="itembx">
+                  <div className="item-title">
+                    <span>Watch IN 360˚</span>
                   </div>
                 </li>
-                <li class="rb-item" ng-repeat="itembx">
-                  <div class="item-title">
+                <li className="rb-item" ng-repeat="itembx">
+                  <div className="item-title">
                     <span>Photo Gallery</span>
                   </div>
                 </li>
-                <li class="rb-item" ng-repeat="itembx">
-                  <div class="item-title">
+                <li className="rb-item" ng-repeat="itembx">
+                  <div className="item-title">
                     <span>Watch Film</span>
                   </div>
                 </li>

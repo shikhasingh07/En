@@ -3,8 +3,10 @@ import { Grid } from "@mui/material";
 import BlurOnIcon from "@mui/icons-material/BlurOn";
 import ShoppingBagIcon from "@mui/icons-material/ShoppingBag";
 import "./Header.scss";
-import StyleHeader from "../../content/content";
+import { StyleHeader } from "../../content/content";
+import { useNavigate } from "react-router-dom";
 const Header = ({ handleDrawer, isMobile }) => {
+  const navigate = useNavigate();
   return (
     <Grid
       container
@@ -22,7 +24,7 @@ const Header = ({ handleDrawer, isMobile }) => {
         justifyContent="start"
         pl="3rem"
       >
-        <span>Enddrone</span>
+        <span onClick={()=>navigate('/')}>Enddrone</span>
       </Grid>
       {isMobile ? (
         <Grid item sm={3} xs={3} className="mobile-version">
@@ -35,7 +37,7 @@ const Header = ({ handleDrawer, isMobile }) => {
           {StyleHeader.map((head, idx) => {
             return (
               <Grid className="header-logo-sb" item md={2} key={idx}>
-                <span>{head.label}</span>
+                <span onClick={()=>navigate(head.navigate)}>{head.label}</span>
               </Grid>
             );
           })}

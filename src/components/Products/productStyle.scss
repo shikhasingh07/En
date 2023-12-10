@@ -3,13 +3,14 @@
 .rb-container ul.rb {
   padding: 0;
   display: inline-block;
+  margin: 0;
 }
 
 .rb-container ul.rb li {
   list-style: none;
   margin: auto;
   margin-left: 2em;
-  min-height: 50px;
+  min-height: 15px;
   border-left: 1px dashed #000;
   padding: 0 0 50px 30px;
   position: relative;
@@ -87,11 +88,13 @@ input::placeholder {
   letter-spacing: 5px;
   font-weight: bold;
   text-transform: uppercase;
+  text-align: center;
 }
 
 .about-us {
   display: flex;
   justify-content: center;
+  margin-bottom: 1rem;
   .about-us-watch-film {
     width: 215px;
     text-align: center;
@@ -103,9 +106,16 @@ input::placeholder {
     color: #15999e;
     letter-spacing: 5px;
     text-transform:uppercase;
-    font-size: 28px;
+    font-size: 21px;
     font-weight: 700;
     padding: 10px;
     font-family: "Mona sans", sans-serif;
   }
+}
+
+.product-labour{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }

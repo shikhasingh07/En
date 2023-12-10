@@ -17,7 +17,7 @@ const ProductModel = () => {
         <Suspense fallback={null}>
           <OrbitControls />
           <primitive object={fbx} scale={0.002} />
-          {/* <Environment preset="sunset" background /> */}
+          <Environment preset="sunset" background/> 
         </Suspense>
       </Stage>
     </PresentationControls>

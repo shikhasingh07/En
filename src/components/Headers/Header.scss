@@ -73,3 +73,18 @@ span:hover:after {
     color: $primary;
   }
 }
+.support-box{
+  height: 75vh;
+  flex-direction: column;
+  justify-content: center;
+  flex-wrap:initial;
+  .contant-box{
+    border-radius: 15px;
+    font-family: "Mona sans", sans-serif;
+    letter-spacing: 1px;
+    span{
+      font-size: 21px;
+      font-weight: 700;
+    }
+  }
+}
